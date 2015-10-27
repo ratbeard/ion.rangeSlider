@@ -1038,14 +1038,15 @@
                     this.coords.p_from_real = this.convertToRealPercent(handle_x) - this.coords.p_gap_left;
                     this.coords.p_from_real = this.calcWithStep(this.coords.p_from_real);
                     this.coords.p_from_real = this.checkDiapason(this.coords.p_from_real, this.options.from_min, this.options.from_max);
-                    this.coords.p_from_real = this.checkMinInterval(this.coords.p_from_real, this.coords.p_to_real, "from");
-                    this.coords.p_from_fake = this.convertToFakePercent(this.coords.p_from_real);
 
                     this.coords.p_to_real = this.convertToRealPercent(handle_x) + this.coords.p_gap_right;
                     this.coords.p_to_real = this.calcWithStep(this.coords.p_to_real);
                     this.coords.p_to_real = this.checkDiapason(this.coords.p_to_real, this.options.to_min, this.options.to_max);
                     this.coords.p_to_real = this.checkMinInterval(this.coords.p_to_real, this.coords.p_from_real, "to");
                     this.coords.p_to_fake = this.convertToFakePercent(this.coords.p_to_real);
+
+                    this.coords.p_from_real = this.checkMinInterval(this.coords.p_from_real, this.coords.p_to_real, "from");
+                    this.coords.p_from_fake = this.convertToFakePercent(this.coords.p_from_real);
 
                     break;
 
